@@ -54,7 +54,7 @@ Control-volume, conservative flux form (south/north faces), upwind advection, θ
 $$\mathrm{Co}=|u|,\Delta t/\Delta z\le 1$$
 
 ### Fourier number (diffusion cap for accuracy): 
-$$\mathrm{Fo}=D_{\mathrm{ax}},\Delta t/\Delta z^{2}\lesssim \text{fo_cap}$$
+$$\mathrm{Fo}=D_{\mathrm{ax}},\Delta t/\Delta z^{2}\lesssim \mathrm{Fo}_{\text{cap}}$ (or $\lesssim \text{fo_cap}$$
 
 ### Explicit sink cap (only if } \theta<1 \text{):
 $$\Delta t\le \dfrac{1}{(1-\theta),S_{\max}},\quad S_{\max}=\max_i \dfrac{H_i}{C_{\text{cell}}}$$
