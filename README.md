@@ -9,11 +9,6 @@ The package provides four interchangeable solvers:
 
 All solvers share the same inputs and outputs, so you can swap methods without changing the calling code.
 
-$$
-\rho\,c_p\,\frac{\partial T}{\partial t}
-+\rho\,c_p\,u\,\frac{\partial T}{\partial z}
-=
-\rho\,c_p\,D_{\mathrm{ax}}\,\frac{\partial^2 T}{\partial z^2}
-- H(z)\,\big[T - T_\infty(t)\big] \, .
-$$
+**Governing PDE**\
+$$\rho c_p \frac{\partial T}{\partial t} + \rho c_p u \frac{\partial T}{\partial z} = \rho c_p D_{\mathrm{ax}} \frac{\partial^2 T}{\partial z^2} - H(z),[T - T_\infty(t)]$$
 
