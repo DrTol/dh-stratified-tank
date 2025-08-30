@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F2F01JB1KE)
+
 # Sensible Stratified Heat Storage Tank Models
 Lightweight, numerically robust Python models for one-dimensional vertically stratified sensible heat storage. 
 
