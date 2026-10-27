@@ -109,7 +109,7 @@ def run_fd_cn(
             )
             T_new = _solve_tridiag(A_lower, A_main, A_upper, rhs)
 
-            E_loss_sum += float(np.sum(H_diag * (0.5*(T + T_new) - Tamb))) * dt_sub
+            E_loss_sum += float(np.sum(H_diag * (((1.0 - theta) * T + theta * T_new) - Tamb))) * dt_sub
             T = T_new
             dt_left -= dt_sub
 
@@ -148,7 +148,10 @@ def _build_operators(
         aL[1:] += K
         aD[:]  += -2.0 * K
         aU[:-1]+= K
-        # zero-gradient at both ends -> no extra source terms
+        # Zero-gradient faces contribute no diffusive flux. For Nz=1,
+        # both missing-face corrections apply to the same cell.
+        aD[0]  += K
+        aD[-1] += K
 
     # --- advection (upwind) ---
     adv = C_cell * abs(u) / dz          # [W/K]

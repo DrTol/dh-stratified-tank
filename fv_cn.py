@@ -105,7 +105,7 @@ def run_fv_cn(
             )
             T_new = _solve_tridiag(A_lower, A_main, A_upper, rhs)
 
-            E_loss_sum += float(np.sum(H_diag * (0.5*(T + T_new) - Tamb))) * dt
+            E_loss_sum += float(np.sum(H_diag * (((1.0 - theta) * T + theta * T_new) - Tamb))) * dt
             T = T_new
             dt_left -= dt
 
